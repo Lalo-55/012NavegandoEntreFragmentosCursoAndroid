@@ -16,14 +16,15 @@ class PrimerFragment : Fragment(R.layout.fragment_primer) {
         val boton = view.findViewById<Button>(R.id.btnNavegar)
         boton.setOnClickListener {
             requireActivity().supportFragmentManager.commit {
-                //Agrega se encima sobre el fragment
+                //Agrega  encima sobre el fragment
                 // add(R.id.fragment_container_view, SegundoFragment())
 
                 //Remplaza el fragmento
-                replace(R.id.fragment_container_view, SegundoFragment())
+                replace(R.id.fragment_container_view, SegundoFragment.newInstance("Lalo", "55",26))
                 addToBackStack("primerFragment")
             }
         }
+
 
     }
 

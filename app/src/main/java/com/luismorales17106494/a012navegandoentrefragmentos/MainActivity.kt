@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
         //Desde el xml, se pone en el fragment container
         //android:name="com.luismorales17106494.a012navegandoentrefragmentos.PrimerFragment"
-
          */
 
 
