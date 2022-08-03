@@ -7,12 +7,12 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
+import androidx.fragment.app.setFragmentResult
 
 class SegundoFragment : Fragment(R.layout.fragment_segundo) {
     private var nombre: String? = ""
     private var apellido: String? = " "
     private var edad: Int? = 0
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +25,13 @@ class SegundoFragment : Fragment(R.layout.fragment_segundo) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val button = view.findViewById<Button>(R.id.btnNavegar2)
+        val button = view.findViewById<Button>(R.id.btnNavegar3)
         val texto = view.findViewById<TextView>(R.id.tvTexto2)
+        val enviarDatos = view.findViewById<Button>(R.id.btnEnviarDatos)
+        enviarDatos.setOnClickListener {
+            val result = "Resultado "
+            setFragmentResult("requestKey", bundleOf("bundleKey" to result))
+        }
         texto.text = "Nombre : $nombre\nApellido: $apellido\nEdad: $edad"
 
         button.setOnClickListener {

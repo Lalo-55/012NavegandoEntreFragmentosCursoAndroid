@@ -7,6 +7,17 @@
     tools:context=".SegundoFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/btnNavegar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="IR A FRAGMENT 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTexto2" />
+
     <TextView
         android:id="@+id/tvTexto2"
         android:layout_width="wrap_content"
@@ -19,14 +30,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnNavegar2"
+        android:id="@+id/btnEnviarDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="IR A FRAGMENT 3"
+        android:layout_marginTop="50dp"
+        android:text="ENVIAR DATOS A FRAGMENT 1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTexto2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNavegar3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
