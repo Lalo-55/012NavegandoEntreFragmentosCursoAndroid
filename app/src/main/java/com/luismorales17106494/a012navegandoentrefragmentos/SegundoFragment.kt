@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResult
+import androidx.navigation.fragment.findNavController
 
 class SegundoFragment : Fragment(R.layout.fragment_segundo) {
     private var nombre: String? = ""
@@ -17,9 +18,21 @@ class SegundoFragment : Fragment(R.layout.fragment_segundo) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        nombre = requireArguments().getString(MI_NOMBRE)
-        apellido = requireArguments().getString(MI_APELLIDO)
-        edad = requireArguments().getInt(MI_EDAD)
+        arguments?.let { bundle ->
+
+            nombre = bundle.getString(MI_NOMBRE)
+            apellido = bundle.getString(MI_APELLIDO)
+            edad = bundle.getInt(MI_EDAD)
+
+
+            /*
+            nombre = requireArguments().getString(MI_NOMBRE)
+            apellido = requireArguments().getString(MI_APELLIDO)
+            edad = requireArguments().getInt(MI_EDAD)
+
+             */
+        }
+
 
     }
 
@@ -35,11 +48,17 @@ class SegundoFragment : Fragment(R.layout.fragment_segundo) {
         texto.text = "Nombre : $nombre\nApellido: $apellido\nEdad: $edad"
 
         button.setOnClickListener {
+            findNavController().navigate(R.id.action_segundoFragment_to_tercerFragment)
+
+
+            /*Forma de navegar al tercer Fragmento
             requireActivity().supportFragmentManager.commit {
                 replace(R.id.fragment_container_view, TercerFragment())
                 addToBackStack("segundoFragment")
 
             }
+
+             */
         }
     }
 

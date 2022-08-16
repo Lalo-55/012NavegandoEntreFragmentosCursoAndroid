@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.fragment.findNavController
 
 class PrimerFragment : Fragment(R.layout.fragment_primer) {
 
@@ -29,6 +30,15 @@ class PrimerFragment : Fragment(R.layout.fragment_primer) {
 
 
         boton.setOnClickListener {
+
+            findNavController().navigate(R.id.action_primerFragment_to_segundoFragment)
+
+
+
+
+            /*
+            //Forma de navegar al Segundo Fragmento
+
             requireActivity().supportFragmentManager.commit {
                 //Agrega  encima sobre el fragment
                 // add(R.id.fragment_container_view, SegundoFragment())
@@ -37,7 +47,13 @@ class PrimerFragment : Fragment(R.layout.fragment_primer) {
                 replace(R.id.fragment_container_view, SegundoFragment.newInstance("Lalo", "55", 26))
                 addToBackStack("primerFragment")
             }
+
+             */
+
+
         }
+
+
 
 
     }
