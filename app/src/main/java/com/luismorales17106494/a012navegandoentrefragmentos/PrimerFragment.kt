@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
@@ -31,9 +32,10 @@ class PrimerFragment : Fragment(R.layout.fragment_primer) {
 
         boton.setOnClickListener {
 
-            findNavController().navigate(R.id.action_primerFragment_to_segundoFragment)
-
-
+            findNavController().navigate(
+                R.id.action_primerFragment_to_segundoFragment,
+                bundleOf("nombre" to "lalo", "apellido" to "55", "edad" to 30)
+            )
 
 
             /*
@@ -52,8 +54,6 @@ class PrimerFragment : Fragment(R.layout.fragment_primer) {
 
 
         }
-
-
 
 
     }
