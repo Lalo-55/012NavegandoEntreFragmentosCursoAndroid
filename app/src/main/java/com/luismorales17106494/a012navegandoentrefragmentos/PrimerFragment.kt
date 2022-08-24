@@ -32,11 +32,17 @@ class PrimerFragment : Fragment(R.layout.fragment_primer) {
 
         boton.setOnClickListener {
 
+            //Navegando al Segundo fragmento con parametros  usando SafeArgs
+            val action = PrimerFragmentDirections.actionPrimerFragmentToSegundoFragment()
+            findNavController().navigate(action)
+
+            /*Forma de navegar al segundo Fragemento con parametros
             findNavController().navigate(
                 R.id.action_primerFragment_to_segundoFragment,
                 bundleOf("nombre" to "lalo", "apellido" to "55", "edad" to 30)
             )
 
+             */
 
             /*
             //Forma de navegar al Segundo Fragmento

@@ -9,16 +9,28 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 
 class SegundoFragment : Fragment(R.layout.fragment_segundo) {
     private var nombre: String? = ""
     private var apellido: String? = " "
     private var edad: Int? = 0
+    private val args: SegundoFragmentArgs by navArgs()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        nombre = args.nombre
+        edad = args.edad
+        apellido = args.apellido
+
+
+
+        /*
+        //recibir argumentos a traves del bundle
         arguments?.let { bundle ->
+
 
             nombre = bundle.getString(MI_NOMBRE)
             apellido = bundle.getString(MI_APELLIDO)
@@ -32,6 +44,8 @@ class SegundoFragment : Fragment(R.layout.fragment_segundo) {
 
              */
         }
+
+         */
 
 
     }

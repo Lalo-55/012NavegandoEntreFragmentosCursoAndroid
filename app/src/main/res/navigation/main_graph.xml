@@ -29,6 +29,20 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left" />
+        <argument
+            android:name="nombre"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="NO_NAME" />
+        <argument
+            android:name="edad"
+            app:argType="integer"
+            android:defaultValue="-2" />
+        <argument
+            android:name="apellido"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="NO_LASTNAME" />
     </fragment>
     <fragment
         android:id="@+id/tercerFragment"
