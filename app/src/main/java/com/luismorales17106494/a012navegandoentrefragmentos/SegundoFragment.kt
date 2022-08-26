@@ -55,6 +55,7 @@ class SegundoFragment : Fragment(R.layout.fragment_segundo) {
         val button = view.findViewById<Button>(R.id.btnNavegar3)
         val texto = view.findViewById<TextView>(R.id.tvTexto2)
         val enviarDatos = view.findViewById<Button>(R.id.btnEnviarDatos)
+
         enviarDatos.setOnClickListener {
             val result = "Resultado "
             setFragmentResult("requestKey", bundleOf("bundleKey" to result))
@@ -62,7 +63,14 @@ class SegundoFragment : Fragment(R.layout.fragment_segundo) {
         texto.text = "Nombre : $nombre\nApellido: $apellido\nEdad: $edad"
 
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_segundoFragment_to_tercerFragment)
+
+
+            val action = SegundoFragmentDirections.actionSegundoFragmentToTercerFragment( )
+            findNavController().navigate(action)
+            //Navegando al Tercer fragmento con parametros  usando SafeArgs
+
+
+            //findNavController().navigate(R.id.action_segundoFragment_to_tercerFragment)
 
 
             /*Forma de navegar al tercer Fragmento

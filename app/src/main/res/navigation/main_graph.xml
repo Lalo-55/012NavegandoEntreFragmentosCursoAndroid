@@ -9,7 +9,7 @@
         android:id="@+id/primerFragment"
         android:name="com.luismorales17106494.a012navegandoentrefragmentos.PrimerFragment"
         android:label="fragment_primer"
-        tools:layout="@layout/fragment_primer" >
+        tools:layout="@layout/fragment_primer">
         <action
             android:id="@+id/action_primerFragment_to_segundoFragment"
             app:destination="@id/segundoFragment"
@@ -17,6 +17,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="cursoAndroid://primer" />
     </fragment>
     <fragment
         android:id="@+id/segundoFragment"
@@ -48,5 +51,15 @@
         android:id="@+id/tercerFragment"
         android:name="com.luismorales17106494.a012navegandoentrefragmentos.TercerFragment"
         android:label="fragment_tercer"
-        tools:layout="@layout/fragment_tercer" />
+        tools:layout="@layout/fragment_tercer" >
+        <argument
+            android:name="numero1"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="numero2"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <include app:graph="@navigation/product_graph" />
 </navigation>

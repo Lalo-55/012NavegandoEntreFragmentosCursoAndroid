@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_graph"
+    app:startDestination="@id/productcFragment">
+
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.luismorales17106494.a012navegandoentrefragmentos.CardFragment"
+        android:label="fragment_card"
+        tools:layout="@layout/fragment_card">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="cursoAndroid://card" />
+    </fragment>
+    <fragment
+        android:id="@+id/productcFragment"
+        android:name="com.luismorales17106494.a012navegandoentrefragmentos.ProductFragment"
+        android:label="fragment_productc"
+        tools:layout="@layout/fragment_productc">
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="cursoAndroid://product" />
+    </fragment>
+</navigation>
